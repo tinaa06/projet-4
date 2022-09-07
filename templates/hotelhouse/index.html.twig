@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HotelhouseController!
+{% endblock %}
+
+{% block body %}
+	<div>
+		<style>
+			.accueil {
+				background-image: url('https://th.bing.com/th/id/R.a003c11ca20746362ddfa670b62c7fbc?rik=2Uz8AmzcosnL5A&pid=ImgRaw&r=0');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: 100% 90%;
+				height: 600px;
+				text-align: center;
+
+			}
+			.card {
+				text-align: center;
+			}
+		</style>
+
+		<div class="accueil ">
+          <button class="btn btn-primary">HouseHotel | Découvrez nos chambres</button>
+		</div>
+		
+	
+	</div>
+
+	{% for chambre in tabChambres %}
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="{{ chambre.photo }}" class="img-fluid rounded-start" alt="...">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<h5 class="card-title">{{ chambre.titre }}</h5>
+						<p class="card-text">{{ chambre.descriptionCourte }}</p>
+						<p class="card-text">
+							{# <small class="text-muted">Last updated 3 mins ago</small> #}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+    
+
+{% endblock %}

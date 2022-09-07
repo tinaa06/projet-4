@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Admin | Formulaire chambre
+{% endblock %}
+
+{% block body %}
+
+{% for label, msgs in app.flashes %}
+		{% for msg in msgs %}
+			<div class="alert alert-{{ label }} text-center">
+				{{ msg }}
+			</div>
+
+		{% endfor %}
+	{% endfor %}
+
+	<h1 class="display-4 text-center my-4">
+
+		{% if editMode %}
+			BACKOFFICE | Edition de la chambre
+		{% else %}
+			BACKOFFICE | Création d'une chambre
+		{% endif %}
+
+	</h1>
+
+	{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+	<button class="btn btn-primary my-2" type="submit">
+
+		{% if editMode %}
+			Enregistrer les modifications
+		{% else %}
+			Créer la chambre
+		{% endif %}
+
+	</button>
+
+	{{ form_end(form) }}
+
+
+{% endblock %}
