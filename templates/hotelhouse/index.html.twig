@@ -4,26 +4,17 @@
 {% endblock %}
 
 {% block body %}
-	<div>
 		<style>
-			.accueil {
-				background-image: url('https://th.bing.com/th/id/R.a003c11ca20746362ddfa670b62c7fbc?rik=2Uz8AmzcosnL5A&pid=ImgRaw&r=0');
+			.carousel {
 				background-repeat: no-repeat;
-				background-attachment: fixed;
-				background-size: 100% 90%;
-				height: 600px;
+				background-size: 100% 100%;
 				text-align: center;
+			} 
 
-			}
 			.card {
 				text-align: center;
 			}
-		    /* .btn {
-				top: 10%;
-				text-align: center;
-				bottom: -10PX;
-			} */
-
+		   
 			.img-fluid{
 				 width: 150px;
                  height: 150px;
@@ -35,18 +26,47 @@
                  flex-direction: row;            
                  flex-wrap: nowrap;              
                 justify-content: space-between;
+				margin-top: 50px;
 			}
 		</style> 
-	
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://th.bing.com/th/id/R.a003c11ca20746362ddfa670b62c7fbc?rik=2Uz8AmzcosnL5A&pid=ImgRaw&r=0" style="width:90%" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img src="https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg?width=2119&height=1195&fit=crop&format=pjpg&auto=webp" style="width:90%" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.alphacoders.com/439/439191.jpg"  style="width:90%" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
 		<div class="accueil row">
 
 		  <div class="d-flex align-items-center justify-content-center">
 
-              <a href="{{ path ('app_main') }}" class="btn btn-primary" style="margin-top: 250px"> HouseHotel | Découvrez nos chambres </a> 
+              <a href="{{ path ('app_main') }}" class="btn btn-primary" style="margin-top: 100px"> HouseHotel | Découvrez nos chambres </a> 
 		  </div>
 		</div>
 		
-	</div>
   
 <div class="contenaire">
    <div class="cercle text-center">

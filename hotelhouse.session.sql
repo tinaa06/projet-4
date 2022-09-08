@@ -1,0 +1,2 @@
+INSERT INTO `chambre` (`id`, `titre`, `description_courte`, `description_longue`, `photo`, `prix_journalier`, `date_enregistrement`) VALUES
+(3, 'CONFORT', 'l;l;^ùmd;,cd', 'biopoj^m;,cdbdhcbx,ncx cdklfkirjgfd,vdv', 'https://img.budgettravel.com/_galleryImage/2009050501639sPH2009051201434_original.jpg?mtime=20140903193954', 80, '2022-09-08 15:39:00');
