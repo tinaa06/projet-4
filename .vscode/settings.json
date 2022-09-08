@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MySQL",
+            "name": "hotelhouse",
+            "connectString": "mysql://e3ffgtmm2y8gmlbk:t960beyg73kjn9oo@i54jns50s3z6gbjt.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/tmt4httrx3fa1sd9"
+        }
+    ]
+}

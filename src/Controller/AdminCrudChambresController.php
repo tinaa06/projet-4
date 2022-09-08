@@ -26,7 +26,7 @@ class AdminCrudChambresController extends AbstractController
     }
 
     #[Route('/admin/crud/chambres/new', name : 'admin_crud_chambres_new')]
-    #[Route('/admin/crud/vehicules/edit/{id}', name: 'admin_crud_chambres_edit')]
+    #[Route('/admin/crud/chambres/edit/{id}', name: 'admin_crud_chambres_edit')]
 
     public function form(Chambre $chambre = null, Request $rq, EntityManagerInterface $manager)
     {

@@ -18,34 +18,67 @@
 			.card {
 				text-align: center;
 			}
-		</style>
+		    /* .btn {
+				top: 10%;
+				text-align: center;
+				bottom: -10PX;
+			} */
 
-		<div class="accueil ">
-          <button class="btn btn-primary">HouseHotel | Découvrez nos chambres</button>
+			.img-fluid{
+				 width: 150px;
+                 height: 150px;
+                 border-radius: 100px;
+	
+			}
+			.contenaire{
+				 display: flex;                  
+                 flex-direction: row;            
+                 flex-wrap: nowrap;              
+                justify-content: space-between;
+			}
+		</style> 
+	
+		<div class="accueil row">
+
+		  <div class="d-flex align-items-center justify-content-center">
+
+              <a href="{{ path ('app_main') }}" class="btn btn-primary" style="margin-top: 250px"> HouseHotel | Découvrez nos chambres </a> 
+		  </div>
 		</div>
 		
-	
+	</div>
+  
+<div class="contenaire">
+   <div class="cercle text-center">
+	 <img src="https://th.bing.com/th/id/OIP.ma1Loa_tGtAU6mVU6oEKCQHaEP?pid=ImgDet&rs=1" class="img-fluid " alt="...">
+		<div class="card-body ">
+		  <h5 class="card-text ">Chambre</h5>
+		  <p class="card-text">Venez découvrez nos chambres pour votre <br> plus grand confort!</p>
+		  <a href="{{ path ('app_main') }}" class="btn btn btn-primary mb-2">Découvrir les chambres</a>
+		</div>
 	</div>
 
-	{% for chambre in tabChambres %}
-		<div class="card mb-3" style="max-width: 540px;">
-			<div class="row g-0">
-				<div class="col-md-4">
-					<img src="{{ chambre.photo }}" class="img-fluid rounded-start" alt="...">
-				</div>
-				<div class="col-md-8">
-					<div class="card-body">
-						<h5 class="card-title">{{ chambre.titre }}</h5>
-						<p class="card-text">{{ chambre.descriptionCourte }}</p>
-						<p class="card-text">
-							{# <small class="text-muted">Last updated 3 mins ago</small> #}
-						</p>
-					</div>
-				</div>
-			</div>
+    <div class="cercle text-center">
+	 <img src="https://th.bing.com/th/id/R.1227cb2ad6ef1a5c3096b9a75f71f2bd?rik=kihHYmuOpJuZYQ&pid=ImgRaw&r=0" class="img-fluid " alt="...">
+		<div class="card-body ">
+		  <h5 class="card-text ">Restaurant</h5>
+		  <p class="card-text">Nos plats sont confectionés à la minute par <br> notre chef cuissinier chaque jour</p>
+		  <a href="{{ path ('app_main') }}" class="btn btn btn-primary mb-2">Voir la carte</a>
 		</div>
-	{% endfor %}
+	</div>
 
-    
+	 <div class="cercle text-center">
+	 <img src="https://santoriniprincess.com/wp-content/uploads/2019/06/Santorini-Princess194.jpg" class="img-fluid " alt="...">
+		<div class="card-body ">
+		  <h5 class="card-text ">Spa</h5>
+		  <p class="card-text">détondez-vous et offrez-vous un massage <br> dont vous vous rapperez longtemps</p>
+		  <a href="{{ path ('app_main') }}" class="btn btn btn-primary mb-2">Découvrir les chambres</a>
+		</div>
+	</div>
 
+</div>
+<div class="contenaire">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10498.560834164598!2d2.2933236365534007!3d48.865070868608136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fdd0dd39a4d%3A0x508194b82b12f012!2s1%20Av.%20Montaigne%2C%2075008%20Paris!5e0!3m2!1sfr!2sfr!4v1662638377655!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	<iframe src="https://www.google.com/maps/embed?pb=!4v1662639032214!6m8!1m7!1sjralzXqFHF2oZzLZc0n4Vw!2m2!1d48.86498113420127!2d2.302218485429692!3f321.39638453088924!4f4.568681424247529!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 {% endblock %}

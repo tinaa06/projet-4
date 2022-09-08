@@ -3,18 +3,48 @@
 {% block title %}Hello AdminCrudSliderController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h1 class="text-center">Admin slider</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	{% for label, msgs in app.flashes %}
+		{% for msg in msgs %}
+			<div class="alert alert-{{ label }} text-center">
+				{{ msg }}
+			</div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/tinat/Desktop/projet4/src/Controller/AdminCrudSliderController.php'|file_link(0) }}">src/Controller/AdminCrudSliderController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/tinat/Desktop/projet4/templates/admin_crud_slider/index.html.twig'|file_link(0) }}">templates/admin_crud_slider/index.html.twig</a></code></li>
-    </ul>
-</div>
+		{% endfor %}
+	{% endfor %}
+	<a href="{{ path('admin_crud_slider_new') }}" class="btn btn-success my-3">Ajouter un slider</a>
+
+	<table class="table table-bordered text-center">
+		<thead>
+			<tr>
+				{% for data in colonnes %}
+					{% if data != "id" %}
+						<th>{{ data }}</th>
+					{% endif %}
+				{% endfor %}
+				<th>Editer / Supprimer</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for data in slds %}
+				<tr>
+					
+					<td>{{ data.photo }}€</td>
+					<td>{{ data.ordre }}</td>
+					<td>{{ data.dateEnregistrement|date('d/m/Y à H:i:s') }}</td>
+					<td>
+						<a href="{{ path('admin_crud_slider_edit', {'id': data.id}) }}" class="text-dark">
+							<i class="fas fa-edit fa-lg"></i>
+						</a>
+
+						<a onclick="return confirm('Voulez-vous supprimer ce slider ?')" href="{{ path('admin_crud_slider_delete', {'id': data.id}) }}" class="text-dark">
+							<i class="fas fa-trash-alt fa-lg"></i>
+						</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+
+	</table>
 {% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+{% for label, msgs in app.flashes %}
+		{% for msg in msgs %}
+			<div class="alert alert-{{ label }} text-center">
+				{{ msg }}
+			</div>
+
+		{% endfor %}
+	{% endfor %}
+
+<h1 class="text-center">Réserver la chambre sélectionné</h1>
+
+<div class="col-md-6">
+				<div class="card mb-3" style="width: 18rem;">
+					<h3 class="card-header">{{ chmb.titre }}</h3>
+					<img src="{{ chmb.photo }}" alt="Image de la chambre">
+					<div class="card-body">
+						<p class="card-text">{{ chmb.descriptionCourte }}</p>
+						<p class="card-text text-end fw-bold">{{ chmb.prixJournalier }}€/j</p>
+					</div>
+				</div>
+			</div>
+
+{{ form_start(form) }}
+
+{{ form_row(form.date_arrivee) }}
+{{ form_row(form.date_depart) }}
+{{ form_row(form.telephone) }}
+
+
+
+<button type="submit" class="btn btn-primary">Réserver à ces dates</button>
+
+{{ form_end(form) }}
+{% endblock %}

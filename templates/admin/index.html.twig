@@ -8,8 +8,8 @@
 <p class="text-center">Bienvenue sur votre BackOffice</p>
 
 <a href="{{ path ('app_admin_crud_chambres') }}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES CHAMBRES</a>
-<a href="" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES MEMBRES</a>
-<a href="" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES SLIDER</a>
+<a href="{{ path ('app_admin_crud_users') }}" class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES MEMBRES</a>
 <a href="{{ path ('app_admin_crud_commandes') }} " class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES COMMANDS</a>
+<a href="{{ path ('app_admin_crud_slider') }} " class="col-md-6 offset-md-3 btn btn-dark mb-2">GESTION DES SLIDER</a>
 
 {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+<h1 class="text-center">Liste des chambres disponibles dans notre hotelhouse</h1>
+
+	<div class="row">
+		{% for item in chmbs %}
+			<div class="col-md-4">
+				<div class="card mb-3" style="width: 18rem;">
+					<h3 class="card-header">{{ item.titre }}</h3>
+					<img src="{{ item.photo }}" alt="Image de la chambre">
+					<div class="card-body">
+						<p class="card-text">{{ item.descriptionCourte }}</p>
+						<p class="card-text text-end fw-bold">{{ item.prixJournalier }}€/j</p>
+					</div>
+					<div class="card-body text-end">
+						<a href="{{ path('resa_chambre', {id: item.id}) }}" class="card-link btn btn-primary">Réserver</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
