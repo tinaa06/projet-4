@@ -1,34 +1,85 @@
 {% extends "base.html.twig" %}
 
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Accueil
+{% endblock %}
 
 
 {% block body %}
+	<style>
+		.accueil {
+			background-image: url('https://i.pinimg.com/originals/6b/3f/24/6b3f24ea152ef3ceca7ecad61222d263.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: 90% 100%;
+			height: 500px;
+			text-align: center;
+		}
 
-{# {% for vehicule in tabVehicule %} #}
+		.contenaire {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			margin-top: 450px;
 
-		<div class="card mb-3" style="max-width: 540px;">
-			<div class="row g-0">
-				<div class="col-md-4">
-					<img src="{{ vehicule.photo }}" class="img-fluid rounded-start" alt="...">
-				</div>
-				<div class="col-md-8">
-					<div class="card-body">
-						<h5 class="card-title">{{ chambre.titre }}</h5>
-						<p class="card-text">{{ chambre.description }}</p>
-						<p class="card-text">
-							{# <small class="text-muted">Last updated 3 mins ago</small> #}
-						</p>
+		}
+		.carousel {
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			text-align: center;
+		}
 
+		.img-fluid {
+			width: 150px;
+			height: 150px;
+			border-radius: 100px;
+
+		}
+	</style>
+
+	<div class="accueil ">
+
+		<h2>BIENVENUE</h2>
+		<h6 class="mb-5 red">Découvrez norte restaurant</h6>
+
+		<div class="contenaire">
+			<div class="cercle text-center">
+				<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 4"></button>
 					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="https://cdni.rbth.com/rbthmedia/images/2020.11/original/5facf60185600a754d255d53.jpg" class="img-fluid" alt="...">
+						</div>
+						<div class="carousel-item ">
+							<img src="https://th.bing.com/th/id/R.a3ff4908bc317490871f0049a274e883?rik=YL9104G5wk0Few&riu=http%3a%2f%2fwww.weightloss.com.au%2fimages%2fhealthy-recipes%2fdinner%2fseed-must-lamb-lge.jpg&ehk=Z58Dsl17GuFQ1cB5IwJRxSHkYhIp0qpIDYcOTrMtziM%3d&risl=&pid=ImgRaw&r=0" class="img-fluid" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="https://assets.afcdn.com/manage/bloc/D20161202/carre-blanquette-120608_L.jpg" class="img-fluid" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+				<div class="card-body ">
+					<h5 class="card-text ">Carte</h5>
+					<p class="card-text">Venez découvrez notre restaurant</p>
+					<a href="/pdf/SampleRestarentandBarMenu.pdf" class="btn btn btn-primary mb-2">Voire la carte</a>
 				</div>
 			</div>
 		</div>
 
+	</div>
 
-	{# {% endfor %} #}
-
-
-
-{% endblock %}
+</div>{% endblock %}

@@ -21,7 +21,8 @@
 		<thead>
 			<tr>
 				{% for data in colonnes %}
-					{% if data != "id" and data != 'password' and data != 'roles'%}
+				{#  #}
+					{% if data != "id" and data != 'password' and data != 'roles' %}
 						<th>{{ data }}</th>
 					{% endif %}
 				{% endfor %}
