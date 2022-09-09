@@ -27,15 +27,17 @@ class MainController extends AbstractController
     #[Route('/main/resa/{id}', name : 'resa_chambre')]
     public function resa(Chambre $chambre = null, EntityManagerInterface $manager, Request $rq)
     {
+        if ($this->getUser()){
         if (!$chambre)
             return $this->redirectToRoute('app_main');
 
         $commande = new Commande;
         $form = $this->createForm(ResaChambreType::class, $commande);
         $form->handleRequest($rq);
-
+      
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $this->getUser();
+
             $commande->setUser($user);
             $commande->setNom($user->getNom());
             $commande->setPrenom($user->getPrenom());
@@ -64,6 +66,10 @@ class MainController extends AbstractController
             'form' => $form,
             'chmb' => $chambre
         ]);
+    }
+    else {
+        return $this->redirectToRoute('app_login');
+    }
     }
       
     #[Route("/main/profil", name:"profil")]
